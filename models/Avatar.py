@@ -6,7 +6,6 @@ class Avatar(ABC):
         self.y=y        
         self.w=w
         self.h=h
-        self.cua=[]
     
     def colissio(self,a):
         return self.x==a.x+self.y==a.y

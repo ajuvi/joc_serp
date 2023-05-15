@@ -1,6 +1,4 @@
 import pygame
-from models.Avatar import Avatar
-from models.Poma import Poma
 
 class ViewModel:
 
@@ -13,7 +11,7 @@ class ViewModel:
 
         #velocitat del joc
         self.FPS = 4
-        self.incrFPS = 0.25
+        self.incrFPS = 0.5
 
         #dimensions de la finestra
         self.screen_width=800
@@ -34,7 +32,6 @@ class ViewModel:
         self._loadTile('poma',"./imatges/poma.png")
 
     def _loadTile(self,key,url):
-        print(url)
         img = pygame.image.load(url) 
         img=pygame.transform.scale(img, (self.tile_width, self.tile_height))
         self._tiles[key]=img

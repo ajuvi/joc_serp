@@ -4,10 +4,7 @@ from models.Avatar import Avatar
 class Poma(Avatar):
     def __init__(self,x,y,w,h,tile):
         super().__init__(x,y,w,h)
-        self.tile=tile
-    
-    def translate(self,x,y):
-        pass
+        self.tile=tile   
 
     def pintar(self,tauler):
         print("pintar poma")     

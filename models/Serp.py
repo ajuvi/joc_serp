@@ -1,9 +1,11 @@
 from models.Avatar import Avatar
 
 class Serp(Avatar):
-    def __init__(self,x,y,w,h,tile):
+    def __init__(self,x,y,w,h,direccio,tile):
         super().__init__(x,y,w,h)
+        self.direccio=direccio
         self.tile=tile
+        self.cua=[]
     
     def translate(self,x,y):
         self.x=self.x+x;

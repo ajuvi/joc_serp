@@ -2,6 +2,7 @@ import pygame
 import time
 from random import randrange
 from ViewModel import ViewModel
+from models.Poma import Poma
 
 # Crer el ViewModel del joc
 vm = ViewModel()
