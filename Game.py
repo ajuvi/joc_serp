@@ -22,35 +22,35 @@ pygame.display.set_caption("El joc de la serp")
 # Configurar la lectura del teclat
 pygame.key.set_repeat(1, 50)
 
-# Crear l'objecte poma
-imatge_poma = vm.getTile('poma');
-poma = Poma(randrange(vm.grid_rows),
-            randrange(vm.grid_columns),
-            vm.tile_width,
-            vm.tile_height,
-            imatge_poma)
 
 # Propietats de la poma
 poma_x=randrange(vm.grid_rows)
 poma_y=randrange(vm.grid_columns)
+poma_width=vm.tile_width
+poma_height=vm.tile_height
+imatge_poma = vm.getTile('poma');
 
-# Crear l'objecte serp
-imatge_serp = vm.getTile('serp');
-serp = Serp(vm.grid_rows//3,
-            vm.grid_columns//2,
-            vm.tile_width,
-            vm.tile_height,
-            [1,0],
+poma = Poma(poma_x,
+            poma_y,
+            poma_width,
+            poma_height,
             imatge_poma)
 
 # Propietats de la sep
 serp_x = vm.grid_rows//3
 serp_y = vm.grid_columns//2
+serp_width=vm.tile_width
+serp_height=vm.tile_height
 serp_direccio = [1,0]
-
-# Propietats de la cua
+imatge_serp = vm.getTile('serp');
 serp_cua = [] 
 
+serp = Serp(serp_x,
+            serp_y,
+            serp_width,
+            serp_height,
+            serp_direccio,
+            imatge_serp)
 
 # Pantalla inicial del joc
 font = pygame.font.SysFont(None, 36)
