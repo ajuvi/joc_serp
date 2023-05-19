@@ -3,6 +3,7 @@ import time
 from random import randrange
 from ViewModel import ViewModel
 from models.Poma import Poma
+from models.Serp import Serp
 
 # Crer el ViewModel del joc
 vm = ViewModel()
@@ -21,6 +22,27 @@ pygame.display.set_caption("El joc de la serp")
 # Configurar la lectura del teclat
 pygame.key.set_repeat(1, 50)
 
+# Crear l'objecte poma
+imatge_poma = vm.getTile('poma');
+poma = Poma(randrange(vm.grid_rows),
+            randrange(vm.grid_columns),
+            vm.tile_width,
+            vm.tile_height,
+            imatge_poma)
+
+# Propietats de la poma
+poma_x=randrange(vm.grid_rows)
+poma_y=randrange(vm.grid_columns)
+
+# Crear l'objecte serp
+imatge_serp = vm.getTile('serp');
+serp = Serp(vm.grid_rows//3,
+            vm.grid_columns//2,
+            vm.tile_width,
+            vm.tile_height,
+            [1,0],
+            imatge_poma)
+
 # Propietats de la sep
 serp_x = vm.grid_rows//3
 serp_y = vm.grid_columns//2
@@ -29,9 +51,6 @@ serp_direccio = [1,0]
 # Propietats de la cua
 serp_cua = [] 
 
-# Propietats de la poma
-poma_x=randrange(vm.grid_rows)
-poma_y=randrange(vm.grid_columns)
 
 # Pantalla inicial del joc
 font = pygame.font.SysFont(None, 36)
